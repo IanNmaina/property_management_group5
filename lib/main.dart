@@ -18,13 +18,21 @@ class MyApp extends StatelessWidget {
         '/': (context) => SplashScreen(),
         '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
-        '/for_rent': (context) => PropertyListPage(category: categories[0]),
-        '/for_sale': (context) => PropertyListPage(category: categories[1]),
+        '/agent_dashboard': (context) => AgentDashboard(),
+        '/tenant_dashboard': (context) => TenantDashboard(),
+        '/admin_dashboard': (context) => AdminDashboard(),
+        '/manage_property': (context) => ManagePropertyPage(),
+        '/manage_tenant': (context) => ManageTenantPage(),
+        '/manage_agent': (context) => ManageAgentPage(),
+        '/property_list': (context) => PropertyListPage(),
+        '/property_details': (context) =>
+            PropertyDetailsPage(), // Add this route
       },
     );
   }
 }
 
+// SplashScreen
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -49,6 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 }
 
+// LoginPage
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -75,8 +84,16 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Handle login logic
-                Navigator.pushReplacementNamed(context, '/home');
+                // Example user role based on login credentials
+                String userRole = 'agent'; // Replace with actual logic
+
+                if (userRole == 'agent') {
+                  Navigator.pushReplacementNamed(context, '/agent_dashboard');
+                } else if (userRole == 'tenant') {
+                  Navigator.pushReplacementNamed(context, '/tenant_dashboard');
+                } else if (userRole == 'admin') {
+                  Navigator.pushReplacementNamed(context, '/admin_dashboard');
+                }
               },
               child: Text('Login'),
             ),
@@ -87,6 +104,262 @@ class LoginPage extends StatelessWidget {
   }
 }
 
+// HomePage
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Real Estate App'),
+      ),
+      body: Center(
+        child: Text('Welcome to the Real Estate App!'),
+      ),
+    );
+  }
+}
+
+// Agent Dashboard
+class AgentDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Agent Dashboard'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Listings/Tenants Account Status'),
+            onTap: () {
+              Navigator.pushNamed(context, '/manage_property');
+            },
+          ),
+          ListTile(
+            title: Text('Manage Tenant'),
+            onTap: () {
+              Navigator.pushNamed(context, '/manage_tenant');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Tenant Dashboard
+class TenantDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tenant Dashboard'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('View Property'),
+            onTap: () {
+              Navigator.pushNamed(context, '/property_list');
+            },
+          ),
+          ListTile(
+            title: Text('View Lease'),
+          ),
+          ListTile(
+            title: Text('Pay Rent'),
+          ),
+          ListTile(
+            title: Text('Submit Request'),
+          ),
+          ListTile(
+            title: Text('Contact Agent'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Admin Dashboard
+class AdminDashboard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Admin Dashboard'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Add/Delete/Update Agent'),
+            onTap: () {
+              Navigator.pushNamed(context, '/manage_agent');
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Manage Property Page
+class ManagePropertyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Manage Property'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Add Property'),
+            onTap: () {
+              // Add Property Logic
+            },
+          ),
+          ListTile(
+            title: Text('Edit Property'),
+            onTap: () {
+              // Edit Property Logic
+            },
+          ),
+          ListTile(
+            title: Text('Delete Property'),
+            onTap: () {
+              // Delete Property Logic
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Manage Tenant Page
+class ManageTenantPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Manage Tenant'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Add Tenant'),
+            onTap: () {
+              // Add Tenant Logic
+            },
+          ),
+          ListTile(
+            title: Text('Edit Tenant'),
+            onTap: () {
+              // Edit Tenant Logic
+            },
+          ),
+          ListTile(
+            title: Text('Delete Tenant'),
+            onTap: () {
+              // Delete Tenant Logic
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Manage Agent Page
+class ManageAgentPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Manage Agent'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Add Agent'),
+            onTap: () {
+              // Add Agent Logic
+            },
+          ),
+          ListTile(
+            title: Text('Edit Agent'),
+            onTap: () {
+              // Edit Agent Logic
+            },
+          ),
+          ListTile(
+            title: Text('Delete Agent'),
+            onTap: () {
+              // Delete Agent Logic
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Property List Page
+class PropertyListPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // For demonstration purposes, we'll use a static category
+    final Category category = categories[0];
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('${category.title} Properties'),
+      ),
+      body: ListView.builder(
+        itemCount: category.units.length,
+        itemBuilder: (context, index) {
+          final unit = category.units[index];
+          return ListTile(
+            leading: Image.network(unit.imageUrl, width: 100),
+            title: Text(unit.title),
+            subtitle: Text('\$${unit.price}'),
+            onTap: () {
+              Navigator.pushNamed(context, '/property_details',
+                  arguments: unit);
+            },
+          );
+        },
+      ),
+    );
+  }
+}
+
+// Property Details Page
+class PropertyDetailsPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final Unit unit = ModalRoute.of(context)!.settings.arguments as Unit;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(unit.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.network(unit.imageUrl),
+            Text(unit.title, style: TextStyle(fontSize: 24)),
+            Text('\$${unit.price}', style: TextStyle(fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Category and Unit Models
 class Category {
   final String title;
   final IconData icon;
@@ -108,6 +381,7 @@ class Unit {
   Unit({required this.title, required this.imageUrl, required this.price});
 }
 
+// Sample Data
 List<Category> categories = [
   Category(
     title: 'Rent',
@@ -148,69 +422,3 @@ List<Category> categories = [
     ],
   ),
 ];
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Real Estate Categories'),
-      ),
-      body: GridView.builder(
-        itemCount: categories.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 1.0,
-        ),
-        itemBuilder: (context, index) {
-          final category = categories[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, category.route);
-            },
-            child: Card(
-              elevation: 2.0,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(category.icon, size: 50),
-                  SizedBox(height: 10),
-                  Text(category.title),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-class PropertyListPage extends StatelessWidget {
-  final Category category;
-
-  PropertyListPage({required this.category});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('${category.title} Properties'),
-      ),
-      body: ListView.builder(
-        itemCount: category.units.length,
-        itemBuilder: (context, index) {
-          final unit = category.units[index];
-          return ListTile(
-            leading: Image.network(unit.imageUrl, width: 100),
-            title: Text(unit.title),
-            subtitle: Text('\$${unit.price}'),
-            onTap: () {
-              // Handle tapping on unit
-            },
-          );
-        },
-      ),
-    );
-  }
-}

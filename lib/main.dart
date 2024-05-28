@@ -5,6 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => SplashScreen(),
-        '/login': (context) => LoginPage(),
+        // '/': (context) => SplashScreen(),
+        // '/login': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/for_rent': (context) => PropertyListPage(category: categories[0]),
         '/for_sale': (context) => PropertyListPage(category: categories[1]),
@@ -150,6 +151,8 @@ List<Category> categories = [
 ];
 
 class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -11,9 +11,13 @@ import 'pages/properties_list.dart';
 import 'classes/unit_category.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
+import 'package:flutter/services.dart';
 //import 'models/models.dart';
 
 void main() {
+  WidgetsFlutterBinding
+      .ensureInitialized(); // Ensure Flutter binding is initialized
+
   runApp(const MyApp());
 }
 
@@ -39,9 +43,7 @@ class MyApp extends StatelessWidget {
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
         '/manage_agent': (context) => const ManageAgentPage(),
-        '/property_list': (context) => const PropertyListPage(
-              units: [],
-            ),
+        '/property_list': (context) => const PropertyListPage(units: []),
         '/property_details': (context) => const PropertyDetailsPage(),
         '/signup': (context) => const SignupPage(),
         '/forgot_password': (context) => const ForgotPasswordPage(),

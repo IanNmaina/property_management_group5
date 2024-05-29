@@ -103,7 +103,7 @@ class LoginPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                print('Google is Clicked');
+                Navigator.pushNamed(context, '/property_list');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -134,7 +134,9 @@ class LoginPage extends StatelessWidget {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/property_list');
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,

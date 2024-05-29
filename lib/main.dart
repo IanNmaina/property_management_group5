@@ -10,6 +10,7 @@ import 'pages/manage_agent.dart';
 import 'pages/properties_list.dart';
 import 'classes/unit_category.dart';
 import 'pages/signup.dart';
+import 'pages/forgot_password.dart';
 //import 'models/models.dart';
 
 void main() {
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
             ),
         '/property_details': (context) => const PropertyDetailsPage(),
         '/signup': (context) => const SignupPage(),
+        '/forgot_password': (context) => const ForgotPasswordPage(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/property_list') {

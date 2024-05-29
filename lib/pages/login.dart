@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  print('Login is Clicked');
+                  Navigator.pushNamed(context, '/property_list');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.amber,

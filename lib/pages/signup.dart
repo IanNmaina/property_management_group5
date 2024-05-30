@@ -57,6 +57,12 @@ class _SignupPageState extends State<SignupPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Signup Page'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushNamed(context, '/login');
+          },
+        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),

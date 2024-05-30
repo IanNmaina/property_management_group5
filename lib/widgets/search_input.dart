@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 
-class SearchInput extends StatefulWidget {
+class SearchInput extends StatelessWidget {
+  // ignore: use_super_parameters
   const SearchInput({Key? key}) : super(key: key);
-
-  @override
-  _SearchInputState createState() => _SearchInputState();
-}
-
-class _SearchInputState extends State<SearchInput> {
-  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(15),
       child: TextField(
-        controller: _controller,
         decoration: InputDecoration(
-          prefixIcon: const Icon(Icons.search),
-          hintText: 'Search properties...',
+          fillColor: Colors.white,
+          filled: true,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(8),
           ),
+          hintText: 'Where would you like to live?',
+          prefixIcon: Container(
+            padding: const EdgeInsets.all(15),
+          ),
+          contentPadding: const EdgeInsets.all(2),
         ),
-        onSubmitted: (query) {
-          print('Search query: $query');
-          // Perform your search logic here
-        },
       ),
     );
   }

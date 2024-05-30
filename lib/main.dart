@@ -8,7 +8,7 @@ import 'pages/manage_property.dart';
 import 'pages/manage_tenant.dart';
 import 'pages/manage_agent.dart';
 import 'pages/properties_list.dart';
-import 'classes/unit_category.dart';
+// import 'classes/unit_category.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 
@@ -43,22 +43,22 @@ class MyApp extends StatelessWidget {
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
         '/manage_agent': (context) => const ManageAgentPage(),
-        '/property_list': (context) => const PropertyListPage(units: []),
-        '/property_details': (context) => const PropertyDetailsPage(),
+        '/property_list': (context) => const PropertyListPage(),
+        // '/property_details': (context) => const PropertyDetailsPage(),
         '/signup': (context) => SignupPage(),
         '/forgot_password': (context) => const ForgotPasswordPage(),
       },
-      onGenerateRoute: (settings) {
-        if (settings.name == '/property_list') {
-          final units = settings.arguments as List<Unit>;
-          return MaterialPageRoute(
-            builder: (context) {
-              return PropertyListPage(units: units);
-            },
-          );
-        }
-        return null;
-      },
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == '/property_list') {
+      //     final units = settings.arguments as List<Unit>;
+      //     return MaterialPageRoute(
+      //       builder: (context) {
+      //         return PropertyListPage();
+      //       },
+      //     );
+      //   }
+      //   return null;
+      // },
     );
   }
 }
@@ -76,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 10), () {
       Navigator.pushReplacementNamed(context, '/login');
     });
   }

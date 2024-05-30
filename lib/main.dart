@@ -1,7 +1,9 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_import
 
 import 'package:flutter/material.dart';
 import 'pages/login.dart';
+import 'styles/colors.dart';
+import 'pages/signup.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,6 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Real Estate App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Urbanist',
+        //scaffoldBackgroundColor: AppColors.background,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',
@@ -24,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/for_rent': (context) => PropertyListPage(category: categories[0]),
         '/for_sale': (context) => PropertyListPage(category: categories[1]),
+        '/signup':(context) => SignupApp(),
       },
     );
   }

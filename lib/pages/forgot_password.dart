@@ -105,17 +105,20 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                     const Text(
                       'One of our team members will get back to you within 5 minutes',
                       style: TextStyle(
-                          color: Color.fromARGB(255, 24, 27, 24), fontSize: 16),
+                          color: Color.fromARGB(255, 255, 255, 255),
+                          fontSize: 16),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 8),
                     Text(
                       'Email: $_email',
-                      style: const TextStyle(color: AppColors.font2),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                     Text(
                       'Time: ${DateTime.now()}',
-                      style: const TextStyle(color: AppColors.font2),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ],
                 ),
@@ -183,17 +186,20 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                   const Text(
                     'One of our team members will get back to you within 5 minutes',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 25, 26, 25), fontSize: 16),
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   Text(
                     'Email: $_email',
-                    style: const TextStyle(color: AppColors.font2),
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255)),
                   ),
                   Text(
                     'Time: ${DateTime.now()}',
-                    style: const TextStyle(color: AppColors.font2),
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255)),
                   ),
                 ],
               ),

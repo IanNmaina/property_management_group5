@@ -14,6 +14,7 @@ class LoginPage extends StatelessWidget {
         backgroundColor: AppColors.background,
         body: Column(
           children: [
+            const Spacer(),
             const Text(
               'Hello, Welcome to Marris Property',
               style: TextStyle(
@@ -80,7 +81,7 @@ class LoginPage extends StatelessWidget {
               width: 250,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/property_list');
+                  Navigator.pushNamed(context, '/home');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.amber,
@@ -103,7 +104,7 @@ class LoginPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/property_list');
+                Navigator.pushNamed(context, '/home');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -135,7 +136,7 @@ class LoginPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/property_list');
+                Navigator.pushNamed(context, '/home');
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -170,7 +171,9 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/signup');
+                  },
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.amber,
                   ),

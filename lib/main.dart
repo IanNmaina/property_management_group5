@@ -7,10 +7,11 @@ import 'pages/admin.dart';
 import 'pages/manage_property.dart';
 import 'pages/manage_tenant.dart';
 import 'pages/manage_agent.dart';
-import 'pages/properties_list.dart';
+//import 'pages/properties_list.dart';
 // import 'classes/unit_category.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
+import 'pages/property_list_screen.dart';
 
 //import 'models/models.dart';
 
@@ -43,10 +44,11 @@ class MyApp extends StatelessWidget {
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
         '/manage_agent': (context) => const ManageAgentPage(),
-        '/property_list': (context) => const PropertyListPage(),
+        // '/property_list': (context) => const PropertyListPage(),
         // '/property_details': (context) => const PropertyDetailsPage(),
         '/signup': (context) => SignupPage(),
         '/forgot_password': (context) => const ForgotPasswordPage(),
+        '/property_list_screen': (context) => const PropertyListScreen(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {

@@ -14,7 +14,7 @@ class TenantDashboard extends StatelessWidget {
           ListTile(
             title: const Text('View Property'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/property_list');
+              Navigator.pushReplacementNamed(context, '/property_list_screen');
             },
           ),
           const ListTile(

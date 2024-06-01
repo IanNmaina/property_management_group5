@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'tenant.dart'; // Import the tenant.dart file
 
 void main() {
   runApp(MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomePage(),
         '/for_rent': (context) => PropertyListPage(category: categories[0]),
         '/for_sale': (context) => PropertyListPage(category: categories[1]),
+        '/tenant': (context) => TenantPage(), // Add this line
       },
     );
   }
@@ -93,11 +95,12 @@ class Category {
   final String route;
   final List<Unit> units;
 
-  Category(
-      {required this.title,
-      required this.icon,
-      required this.route,
-      required this.units});
+  Category({
+    required this.title,
+    required this.icon,
+    required this.route,
+    required this.units,
+  });
 }
 
 class Unit {
@@ -146,6 +149,13 @@ List<Category> categories = [
           imageUrl: 'https://via.placeholder.com/150',
           price: 250000),
     ],
+  ),
+  // Add Tenant category
+  Category(
+    title: 'Tenant',
+    icon: Icons.person,
+    route: '/tenant',
+    units: [],
   ),
 ];
 

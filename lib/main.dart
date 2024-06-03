@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'pages/property_list.dart';
-import 'classes/unit_category.dart';
+//import 'screen/property_list_page.dart';
 //import 'models/models.dart';
 void main() {
-  runApp(MyApp());
+  // ignore: unused_local_variable
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -21,22 +23,10 @@ class MyApp extends StatelessWidget {
      initialRoute: '/',
      routes: {
        '/': (context) => const SplashScreen(),
-       '/property_list': (context) => const PropertyListPage(
-             units: [],
-           ),
-       '/property_details': (context) => const PropertyDetailsPage(),
+       //'/property_list_page': (context) => PropertyListPage(),
+       '/property_details_page': (context) => const PropertyDetailsPage(),
      },
-     onGenerateRoute: (settings) {
-       if (settings.name == '/property_list') {
-         final units = settings.arguments as List<Unit>;
-         return MaterialPageRoute(
-           builder: (context) {
-             return PropertyListPage(units: units);
-           },
-         );
-       }
-       return null;
-     },
+
    );
  }
 }
@@ -58,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
  void initState() {
    super.initState();
    Future.delayed(const Duration(seconds: 3), () {
-     Navigator.pushReplacementNamed(context, '/property_list');
+     Navigator.pushReplacementNamed(context, '/property_detail_page');
    });
  }
 

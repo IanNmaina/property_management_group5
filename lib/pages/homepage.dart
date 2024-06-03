@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                 title: const Text('Tenant'),
                 onTap: () {
                   Navigator.pop(context);
-                  Navigator.pushNamed(context, '/tenant_dashboard');
+                  Navigator.pushNamed(context, '/tenant_screen');
                 },
               ),
               ListTile(

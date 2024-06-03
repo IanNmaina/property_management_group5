@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:marries_property/pages/tenants1.dart';
 import 'pages/login.dart';
 import 'pages/homepage.dart';
 import 'pages/agents.dart';
-import 'pages/tenants.dart';
+//import 'pages/tenants.dart';
 import 'pages/admin.dart';
 import 'pages/manage_property.dart';
 import 'pages/manage_tenant.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/agent_dashboard': (context) => const AgentDashboard(),
-        '/tenant_dashboard': (context) => const TenantDashboard(),
+        //'/tenant_dashboard': (context) => const TenantDashboard(),
         '/admin_dashboard': (context) => const AdminDashboard(),
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         '/signup': (context) => SignupPage(),
         '/forgot_password': (context) => const ForgotPasswordPage(),
         '/property_list_screen': (context) => const PropertyListScreen(),
+        '/tenant_screen': (context) => const TenantPage(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {

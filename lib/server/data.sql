@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS properties (
 
 INSERT INTO properties (image, price, description, for_sale, for_rent, location, agent_id)
 VALUES
-    ('https://via.placeholder.com/150', 100000.00, 'A beautiful single-family home with a large backyard.', TRUE, FALSE, '123 Main St, Springfield', 1),
-    ('https://via.placeholder.com/150', 1500.00, 'A cozy apartment in the city center.', FALSE, TRUE, '456 Elm St, Metropolis', 2),
+    ('https://tinyurl.com/yc2mvrpe', 100000.00, 'A beautiful single-family home with a large backyard.', TRUE, FALSE, '123 Main St, Springfield', 1),
+    ('https://tinyurl.com/mr27t2u7', 1500.00, 'A cozy apartment in the city center.', FALSE, TRUE, '456 Elm St, Metropolis', 2),
     ('https://via.placeholder.com/150', 200000.00, 'A modern townhouse with all the amenities.', TRUE, FALSE, '789 Oak St, Smallville', 3),
     ('https://via.placeholder.com/150', 1200.00, 'A spacious loft with a great view.', FALSE, TRUE, '101 Pine St, Gotham', 4),
     ('https://via.placeholder.com/150', 300000.00, 'A luxurious villa with a pool.', TRUE, FALSE, '202 Birch St, Star City', 5),

@@ -29,7 +29,7 @@ class ViewLeasePage extends StatelessWidget {
                     ),
                     SizedBox(width: 20),
                     Text(
-                      'Property',
+                      'Properties',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_import, duplicate_ignore, no_logic_in_create_state
+
 import 'package:flutter/material.dart';
 import 'package:marries_property/pages/tenants1.dart';
 import 'pages/login.dart';
@@ -13,10 +15,12 @@ import 'pages/properties_list.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
-import 'pages/agentapp.dart';
+import 'pages/agent.dart';
 
 //import 'models/models.dart';
 
+//import 'screen/property_list_page.dart';
+//import 'models/models.dart';
 void main() {
   WidgetsFlutterBinding
       .ensureInitialized(); // Ensure Flutter binding is initialized
@@ -26,13 +30,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //changed
       title: 'Real Estate App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Urbanist',
+        //scaffoldBackgroundColor: AppColors.background,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',
@@ -52,7 +58,7 @@ class MyApp extends StatelessWidget {
         '/forgot_password': (context) => const ForgotPasswordPage(),
         '/property_list_screen': (context) => const PropertyListScreen(),
         '/tenant_screen': (context) => const TenantPage(),
-        '/agent_app': (context) => const AgentApp(),
+        '/agent': (context) => const AgentApp(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {
@@ -74,7 +80,6 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _SplashScreenState createState() => _SplashScreenState();
 }
 

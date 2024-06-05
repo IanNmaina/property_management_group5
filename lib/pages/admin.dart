@@ -21,7 +21,7 @@ class AdminDashboard extends StatelessWidget {
           ListTile(
             title: const Text('view agent profile'),
             onTap: () {
-              Navigator.pushNamed(context, '/agent_app');
+              Navigator.pushNamed(context, '/agent');
             },
           ),
         ],

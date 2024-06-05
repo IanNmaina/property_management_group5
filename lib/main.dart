@@ -4,14 +4,11 @@ import 'pages/property_list.dart';
 //import 'screen/property_list_page.dart';
 //import 'models/models.dart';
 void main() {
-  // ignore: unused_local_variable
-
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,9 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const SplashScreen(),
-        //'/property_list_page': (context) => const PropertyListPage(),
-        '/property_details_page': (context) => const PropertyDetailsPage(),
+
       },
     );
   }
@@ -32,19 +27,15 @@ class MyApp extends StatelessWidget {
 
 // SplashScreen (remain unchanged)
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, '/property_list_page');
+
     });
   }
 
@@ -57,3 +48,4 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+

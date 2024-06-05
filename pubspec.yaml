@@ -67,12 +67,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/logo.png
-     - assets/fb.png
-     - assets/google.png
-     - assets/fonts/Urbanist-Light.ttf
-     - assets/house02.jpeg
-     - assets/offer01.jpeg
-     - assets/offer02.jpeg
   #   - images/a_dot_ham.jpeg
   
 
@@ -102,6 +96,5 @@ flutter:
         - asset: assets/fonts/Urbanist-ExtraBold.ttf
           weight: 800
         - asset: assets/fonts/Urbanist-Black.ttf
-          weight: 900
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

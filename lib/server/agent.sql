@@ -1,0 +1,61 @@
+CREATE TABLE IF NOT EXISTS agents (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+    -- other agent fields
+);
+
+
+
+
+INSERT INTO agents (name)
+VALUES
+    ('John Doe'),
+    ('Jane Smith'),
+    ('Robert Johnson'),
+    ('Emily Davis'),
+    ('Michael Brown'),
+    ('Linda Martinez'),
+    ('William Garcia'),
+    ('Elizabeth Anderson'),
+    ('James Rodriguez'),
+    ('Jennifer Wilson'),
+    ('David Lee'),
+    ('Susan Harris'),
+    ('Richard Clark'),
+    ('Jessica Lewis'),
+    ('Charles Robinson'),
+    ('Mary Walker'),
+    ('Thomas Hall'),
+    ('Karen Young'),
+    ('Christopher King'),
+    ('Nancy Wright'),
+    ('Daniel Scott'),
+    ('Sarah Green'),
+    ('Matthew Adams'),
+    ('Laura Baker'),
+    ('Anthony Gonzalez'),
+    ('Helen Nelson'),
+    ('Mark Carter'),
+    ('Deborah Mitchell'),
+    ('Paul Perez'),
+    ('Sandra Roberts'),
+    ('Steven Turner'),
+    ('Anna Phillips'),
+    ('Kevin Campbell'),
+    ('Ruth Parker'),
+    ('Edward Evans'),
+    ('Betty Edwards'),
+    ('Brian Collins'),
+    ('Dorothy Stewart'),
+    ('George Sanchez'),
+    ('Alice Morris'),
+    ('Kenneth Rogers'),
+    ('Shirley Reed'),
+    ('Joshua Cook'),
+    ('Cynthia Morgan'),
+    ('Larry Bell'),
+    ('Angela Murphy'),
+    ('Frank Cooper'),
+    ('Donna Richardson'),
+    ('Scott Cox'),
+    ('Katherine Howard');

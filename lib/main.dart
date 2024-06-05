@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'pages/property_list.dart';
 
 //import 'screen/property_list_page.dart';
 //import 'models/models.dart';
@@ -19,8 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-
       },
+      debugShowCheckedModeBanner: false, // Remove debug banner
     );
   }
 }
@@ -34,7 +33,6 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
 
     });
   }
@@ -48,4 +46,3 @@ class SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-

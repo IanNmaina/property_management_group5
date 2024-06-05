@@ -4,7 +4,7 @@ import 'package:marries_property/classes/classes.dart';
 class PropertyDetailPage extends StatelessWidget {
   final Property property;
 
-  PropertyDetailPage({required this.property});
+  const PropertyDetailPage({required this.property});
 
   @override
   Widget build(BuildContext context) {

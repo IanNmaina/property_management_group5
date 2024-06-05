@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'tenant.dart'; // Import the tenant.dart file
+import 'view_lease.dart'; // Import the view_lease.dart file
+import 'pay_rent.dart'; // Import the pay_rent.dart file
 
 void main() {
   runApp(MyApp());
@@ -22,6 +24,9 @@ class MyApp extends StatelessWidget {
         '/for_rent': (context) => PropertyListPage(category: categories[0]),
         '/for_sale': (context) => PropertyListPage(category: categories[1]),
         '/tenant': (context) => TenantPage(), // Add this line
+        '/view_lease': (context) => ViewLeasePage(), // Add this line
+        '/pay_rent': (context) => PayRentPage(), // Add this line
+        
       },
     );
   }

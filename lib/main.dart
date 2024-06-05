@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'tenant.dart'; // Import the tenant.dart file
 
 //import 'screen/property_list_page.dart';
 //import 'models/models.dart';

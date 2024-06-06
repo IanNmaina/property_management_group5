@@ -74,7 +74,11 @@ flutter:
      - assets/house02.jpeg
      - assets/offer01.jpeg
      - assets/offer02.jpeg
+     - assets/images/pic1.png
+     - assets/images/pic2.webp
+     - assets/images/pic3.webp
   #   - images/a_dot_ham.jpeg
+
   
 
   # An image asset can refer to one or more resolution-specific "variants", see

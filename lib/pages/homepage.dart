@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.green,
         title: const Text('Real Estate App'),
       ),
       body: Center(
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 _showRoleDialog(context);
               },
-              child: const Text('Enter Your Role'),
+              child: const Text('Pick Your Role'),
             ),
           ],
         ),
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text('Enter your role'),
+          title: const Text('Pick your role'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

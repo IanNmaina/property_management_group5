@@ -34,7 +34,7 @@ class DatabaseHelper {
       CREATE TABLE properties (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
-        imageUrl TEXT,
+        imageUrl BLOB,
         price INTEGER
       )
     ''');

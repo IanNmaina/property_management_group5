@@ -3,30 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:marries_property/styles/colors.dart';
 
-void main() {
-  runApp(AgentApp());
-}
-
-class AgentApp extends StatelessWidget {
-  const AgentApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      color: AppColors.darkblue,
-      debugShowCheckedModeBanner: false,
-      home: AgentPage(),
-    );
-  }
-}
-
 class AgentPage extends StatelessWidget {
-  final String agentName = 'Solomon Ondula';
-  final String agentPhone = '+1 234 567 890';
-  final String agentEmail = 'solomonondula@gmail.com';
-  final String agentBio =
-      'With over 10 years of experience in real estate, Solomon has helped numerous clients find their dream homes. He is known for his professionalism, integrity, and dedication to customer satisfaction.';
-  final String agentImageUrl = 'assets/images/pic2.webp';
+  final String agentName;
+  final String agentPhone;
+  final String agentEmail;
+  final String agentBio;
+  final String agentImageUrl;
 
   final List<Map<String, String>> properties = [
     {
@@ -46,21 +28,27 @@ class AgentPage extends StatelessWidget {
     },
   ];
 
-  AgentPage({super.key});
+  AgentPage({
+    super.key,
+    required this.agentName,
+    required this.agentPhone,
+    required this.agentEmail,
+    required this.agentBio,
+    required this.agentImageUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pushReplacementNamed(context,
-                '/admin_dashboard'); // If needed, handle back navigation here
+            Navigator.pop(context);
           },
         ),
-        title: Row(
-          children: const [
+        title: const Row(
+          children: [
             SizedBox(width: 40), // Add some space to the left
             Text('Agent Profile'),
           ],
@@ -81,36 +69,37 @@ class AgentPage extends StatelessWidget {
                     backgroundImage: AssetImage(agentImageUrl),
                   ),
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 Center(
                   child: Text(
                     agentName,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Center(
                   child: Text(
                     agentPhone,
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                    style: const TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Center(
                   child: Text(
                     agentEmail,
-                    style: TextStyle(fontSize: 16, color: Colors.grey),
+                    style: const TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ),
-                SizedBox(height: 16),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'About',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   agentBio,
-                  style: TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 16),
                 Text(

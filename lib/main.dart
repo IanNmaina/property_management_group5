@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:marries_property/pages/tenants1.dart';
+import 'package:marries_property/pages/view_lease.dart';
+import 'package:marries_property/pages/pay_rent.dart';
 import 'pages/login.dart';
 import 'pages/homepage.dart';
 import 'pages/agents.dart';
@@ -15,7 +17,7 @@ import 'pages/properties_list.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
-import 'pages/agent.dart';
+import 'pages/agent_profile.dart';
 
 //import 'models/models.dart';
 
@@ -58,7 +60,16 @@ class MyApp extends StatelessWidget {
         '/forgot_password': (context) => const ForgotPasswordPage(),
         '/property_list_screen': (context) => const PropertyListScreen(),
         '/tenant_screen': (context) => const TenantPage(),
-        '/agent': (context) => const AgentApp(),
+        '/agent_profile': (context) => AgentPage(
+              agentName: '',
+              agentPhone: '',
+              agentEmail: '',
+              agentBio: '',
+              agentImageUrl: '',
+            ),
+        '/property_detail': (context) => const PropertyDetailPage(property: {}),
+        '/view_lease': (context) => ViewLeasePage(), // Add this line
+        '/pay_rent': (context) => PayRentPage(), // Add this line
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {

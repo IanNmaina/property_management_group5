@@ -52,7 +52,19 @@ class AgentPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Agent Profile'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacementNamed(context,
+                '/admin_dashboard'); // If needed, handle back navigation here
+          },
+        ),
+        title: Row(
+          children: const [
+            SizedBox(width: 40), // Add some space to the left
+            Text('Agent Profile'),
+          ],
+        ),
         backgroundColor: AppColors.background,
       ),
       body: Container(
@@ -144,14 +156,19 @@ class PropertyDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(property['name']!),
-        backgroundColor: AppColors.background,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        title: Row(
+          children: [
+            SizedBox(width: 40), // Add some space to the left
+            Text(property['name']!),
+          ],
+        ),
+        backgroundColor: AppColors.background,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

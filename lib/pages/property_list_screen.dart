@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/property_service.dart';
 import '../models/property.dart';
+import '../forms/add_property.dart';
 
 class PropertyListScreen extends StatefulWidget {
   const PropertyListScreen({super.key});
@@ -11,13 +12,12 @@ class PropertyListScreen extends StatefulWidget {
 }
 
 class _PropertyListScreenState extends State<PropertyListScreen> {
-  final PropertyService _propertyService = PropertyService();
-  late Future<List<Property>> _futureProperties;
+  late Future<List<Property>> futureProperties;
 
   @override
   void initState() {
     super.initState();
-    _futureProperties = _propertyService.getProperties();
+    futureProperties = PropertyService().getProperties();
   }
 
   @override
@@ -25,9 +25,10 @@ class _PropertyListScreenState extends State<PropertyListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Properties'),
+        backgroundColor: Colors.blue,
       ),
       body: FutureBuilder<List<Property>>(
-        future: _futureProperties,
+        future: futureProperties,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -36,23 +37,34 @@ class _PropertyListScreenState extends State<PropertyListScreen> {
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return const Center(child: Text('No properties found'));
           } else {
-            final properties = snapshot.data!;
             return ListView.builder(
-              itemCount: properties.length,
+              itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                final property = properties[index];
-                return ListTile(
-                  leading: Image.network(property.image),
-                  title: Text(property.location),
-                  subtitle: Text('\$${property.price}'),
-                  onTap: () {
-                    // Handle property tap
-                  },
+                Property property = snapshot.data![index];
+                return Card(
+                  child: ListTile(
+                    leading: Image.network(property.image),
+                    title: Text(property.description),
+                    subtitle: Text('\$${property.price.toString()}'),
+                    trailing: const Icon(Icons.arrow_forward),
+                    onTap: () {
+                      // Handle navigation to property details
+                    },
+                  ),
                 );
               },
             );
           }
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AddPropertyPage()),
+          );
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }

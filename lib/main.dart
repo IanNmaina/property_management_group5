@@ -1,7 +1,6 @@
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_import
+
 import 'package:flutter/material.dart';
-import 'tenant.dart'; // Import the tenant.dart file
-import 'view_lease.dart'; // Import the view_lease.dart file
-import 'pay_rent.dart'; // Import the pay_rent.dart file
 
 //import 'screen/property_list_page.dart';
 //import 'models/models.dart';
@@ -14,25 +13,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, //changed
       title: 'Real Estate App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Urbanist',
+        //scaffoldBackgroundColor: AppColors.background,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: '/',
       routes: {
-<<<<<<< HEAD
-        '/': (context) => SplashScreen(),
-        '/login': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
-        '/for_rent': (context) => PropertyListPage(category: categories[0]),
-        '/for_sale': (context) => PropertyListPage(category: categories[1]),
-        '/tenant': (context) => TenantPage(), // Add this line
-        '/view_lease': (context) => ViewLeasePage(), // Add this line
-        '/pay_rent': (context) => PayRentPage(), // Add this line
-        
-=======
->>>>>>> 84b4833259cce00aeec85cbf6bb2bd41c6d5c851
       },
       debugShowCheckedModeBanner: false, // Remove debug banner
     );

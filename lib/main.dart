@@ -18,6 +18,7 @@ import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
 import 'pages/agent_profile.dart';
+import 'pages/homepagetenants.dart';
 
 //import 'models/models.dart';
 
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
+        '/home1': (context) => const HomePage1(),
         '/agent_dashboard': (context) => const AgentDashboard(),
         //'/tenant_dashboard': (context) => const TenantDashboard(),
         '/admin_dashboard': (context) => const AdminDashboard(),

@@ -1,8 +1,12 @@
+import 'package:flutter/material.dart';
+
 void main() {
   runApp(SignupApp());
 }
 
 class SignupApp extends StatelessWidget {
+  const SignupApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

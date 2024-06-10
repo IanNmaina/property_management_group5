@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 // Define the TenantPage widget
 class TenantPage extends StatelessWidget {
+  const TenantPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Tenant Dashboard',
           style: TextStyle(
             color: Colors.white,
@@ -18,7 +20,7 @@ class TenantPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           color: Colors.green[100],
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -29,15 +31,15 @@ class TenantPage extends StatelessWidget {
                     shape: BoxShape.circle,
                     border: Border.all(color: Colors.green[900]!, width: 4),
                   ),
-                  padding: EdgeInsets.all(8.0),
-                  child: CircleAvatar(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage('assets/logo.png'),
                     backgroundColor: Colors.white,
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Welcome message
               Text(
                 'Welcome, Tenant!',
@@ -47,7 +49,7 @@ class TenantPage extends StatelessWidget {
                   color: Colors.green[900],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Actions label
               Text(
                 'Actions:',
@@ -57,7 +59,7 @@ class TenantPage extends StatelessWidget {
                   color: Colors.green[900],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               // Grid of action buttons
               GridView.count(
                 crossAxisCount: 2,
@@ -65,7 +67,7 @@ class TenantPage extends StatelessWidget {
                 mainAxisSpacing: 10,
                 crossAxisSpacing: 10,
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   _buildActionCard(
                     context,
@@ -108,11 +110,11 @@ class TenantPage extends StatelessWidget {
 
   // Helper method to build action buttons
   Widget _buildActionCard(
-      BuildContext context, {
-        required IconData icon,
-        required String label,
-        required String route,
-      }) {
+    BuildContext context, {
+    required IconData icon,
+    required String label,
+    required String route,
+  }) {
     return Card(
       color: Colors.green[700],
       elevation: 4,
@@ -124,11 +126,11 @@ class TenantPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 50, color: Colors.amber[700]),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               label,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,

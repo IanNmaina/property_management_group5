@@ -4,7 +4,7 @@ import 'package:marries_property/classes/classes.dart';
 class PropertyDetailPage extends StatelessWidget {
   final Property property;
 
-  const PropertyDetailPage({required this.property});
+  const PropertyDetailPage({super.key, required this.property});
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,24 @@ class PropertyDetailPage extends StatelessWidget {
           children: [
             Image.network(property.imageUrl),
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     property.title,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     '\$${property.price.toStringAsFixed(2)}',
                     style: TextStyle(fontSize: 20, color: Colors.grey[700]),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
-                    property.description,
-                    style: TextStyle(fontSize: 16),
+                    property.description ?? 'No description available',
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ],
               ),

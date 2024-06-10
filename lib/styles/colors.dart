@@ -9,4 +9,7 @@ class AppColors {
   static const disablefont = Color(0xffE01A59);
   static const green = Color(0xff107C10);
   static const foggy = Color(0xff767676);
+  static const darkblue = Color(0xff214a57);
+  static const cool = Color(0xff2d5a4b);
+  static const white = Color(0xfff0f8ff);
 }

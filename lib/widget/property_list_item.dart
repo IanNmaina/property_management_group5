@@ -7,12 +7,12 @@ import 'package:marries_property/screen/property_list_page.dart';
 class PropertyListItem extends StatelessWidget {
   final Property property;
 
-  PropertyListItem({required this.property});
+  const PropertyListItem({super.key, required this.property});
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       child: ListTile(
         leading: Image.network(
           property.imageUrl,

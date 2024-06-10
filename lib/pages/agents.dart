@@ -24,6 +24,12 @@ class AgentDashboard extends StatelessWidget {
               Navigator.pushNamed(context, '/manage_tenant');
             },
           ),
+          ListTile(
+            title: const Text('View Properties'),
+            onTap: () {
+              Navigator.pushNamed(context, '/property_list_screen');
+            },
+          ),
         ],
       ),
     );

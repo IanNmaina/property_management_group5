@@ -73,7 +73,7 @@ class TenantPage extends StatelessWidget {
                     context,
                     icon: Icons.home,
                     label: 'View Property',
-                    route: '/property_list_screen',
+                    route: '/property_list',
                   ),
                   _buildActionCard(
                     context,

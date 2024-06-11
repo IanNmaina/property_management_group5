@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_new, use_key_in_widget_constructors, library_private_types_in_public_api
+// ignore_for_file: prefer_const_constructors, unnecessary_new, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:marries_property/styles/colors.dart';
 
 void main() {
   runApp(SignupApp());
@@ -10,6 +11,7 @@ class SignupApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SignupPage(),
     );
   }
@@ -56,99 +58,101 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: AppColors.foggy,
         title: Text('Signup Page'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pushNamed(context, '/login');
-          },
-        ),
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: <Widget>[
-              TextFormField(
-                controller: _nameController,
-                decoration: InputDecoration(labelText: 'Name'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your name';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _surnameController,
-                decoration: InputDecoration(labelText: 'Surname'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your surname';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
-                keyboardType: TextInputType.emailAddress,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
-                  }
-                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email address';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _phoneController,
-                decoration: InputDecoration(labelText: 'Phone Number'),
-                keyboardType: TextInputType.phone,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your phone number';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _dobController,
-                decoration: InputDecoration(
-                  labelText: 'Date of Birth',
-                  hintText: 'YYYY-MM-DD',
+      body: Container(
+        color: AppColors.background,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              children: <Widget>[
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
+                  controller: _nameController,
+                  decoration: InputDecoration(labelText: 'Name'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    return null;
+                  },
                 ),
-                onTap: () {
-                  FocusScope.of(context).requestFocus(new FocusNode());
-                  _selectDate(context);
-                },
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your date of birth';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // Process the signup data
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Processing Data')));
-                  }
-
-                  Navigator.pushNamed(context, '/home');
-                },
-                child: Text('Sign Up'),
-              ),
-            ],
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
+                  controller: _surnameController,
+                  decoration: InputDecoration(labelText: 'Surname'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your surname';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  decoration: InputDecoration(labelText: 'Email',),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      return 'Please enter a valid email address';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  style: TextStyle(color: Colors.white),
+                  controller: _phoneController,
+                  decoration: InputDecoration(labelText: 'Phone Number'),
+                  keyboardType: TextInputType.phone,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your phone number';
+                    }
+                    return null;
+                  },
+                ),
+                TextFormField(
+                  controller: _dobController,
+                  decoration: InputDecoration(
+                    labelText: 'Date of Birth',
+                    hintText: 'YYYY-MM-DD',
+                  ),
+                  onTap: () {
+                    FocusScope.of(context).requestFocus(new FocusNode());
+                    _selectDate(context);
+                  },
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your date of birth';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      // Process the signup data
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Processing Data')));
+                    }
+                    Navigator.pushReplacementNamed(context, '/home');
+                  },
+                  child: Text('Sign Up'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+

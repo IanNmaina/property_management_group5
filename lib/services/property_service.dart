@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/property.dart';
+import '../models/agent.dart';
 
 class PropertyService {
   static const String baseUrl = 'http://192.168.43.88:3000';
@@ -33,4 +34,23 @@ class PropertyService {
       throw Exception('Failed to add property');
     }
   }
+
+  Future<void> addAgent(Agent agent) async {
+    final response = await http.post(
+      Uri.parse('$baseUrl/agents'),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'agent_id': agent,
+        'image': agent.image,
+        'fullname': agent.fullname,
+        'description': agent.description,
+        'phonenumber': agent.phonenumber,
+        'email': agent.email,
+      }),
+    );
+    if (response.statusCode != 200) {
+      throw Exception('Failed to add agent');
+    }
+  }
+
 }

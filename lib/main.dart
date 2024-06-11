@@ -18,6 +18,7 @@ import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
 import 'pages/agent_profile.dart';
+import 'pages/partners.dart';
 
 //import 'models/models.dart';
 
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
         '/property_detail': (context) => const PropertyDetailPage(property: {}),
         '/view_lease': (context) => ViewLeasePage(), // Add this line
         '/pay_rent': (context) => PayRentPage(), // Add this line
+        '/partners': (context) => PartnerPage(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {

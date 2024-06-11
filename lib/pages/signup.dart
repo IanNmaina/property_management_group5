@@ -1,5 +1,8 @@
+<<<<<<< HEAD
+=======
 // ignore_for_file: prefer_const_constructors, unnecessary_new, use_key_in_widget_constructors, library_private_types_in_public_api
 
+>>>>>>> ebb331a54e1491c2fe3ed0494befe5685e0b35c0
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,6 +10,8 @@ void main() {
 }
 
 class SignupApp extends StatelessWidget {
+  const SignupApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

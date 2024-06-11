@@ -1,3 +1,10 @@
+class Property {
+  String title;
+  String imageUrl;
+  int price;
+
+  Property(this.title, this.imageUrl, this.price);
+}
 
 class Tenant {
   String name;
@@ -12,4 +19,3 @@ class Agent {
 
   Agent(this.name, this.email);
 }
-

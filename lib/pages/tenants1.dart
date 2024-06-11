@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'partner.dart'; // Import the PartnerPage
 
-// Define the TenantPage widget
 class TenantPage extends StatelessWidget {
-  const TenantPage({super.key});
+  const TenantPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,6 @@ class TenantPage extends StatelessWidget {
         ),
         backgroundColor: Colors.green[900],
       ),
-      // Make the whole page scrollable
       body: SingleChildScrollView(
         child: Container(
           color: Colors.green[100],
@@ -24,7 +23,6 @@ class TenantPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Logo section
               Center(
                 child: Container(
                   decoration: BoxDecoration(
@@ -40,7 +38,6 @@ class TenantPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Welcome message
               Text(
                 'Welcome, Tenant!',
                 style: TextStyle(
@@ -50,7 +47,6 @@ class TenantPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              // Actions label
               Text(
                 'Actions:',
                 style: TextStyle(
@@ -60,7 +56,6 @@ class TenantPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              // Grid of action buttons
               GridView.count(
                 crossAxisCount: 2,
                 childAspectRatio: 1,
@@ -108,7 +103,6 @@ class TenantPage extends StatelessWidget {
     );
   }
 
-  // Helper method to build action buttons
   Widget _buildActionCard(
     BuildContext context, {
     required IconData icon,
@@ -125,7 +119,7 @@ class TenantPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 50, color: Colors.amber[700]),
+            Icon(icon, size: 50, color: Colors.white),
             const SizedBox(height: 10),
             Text(
               label,

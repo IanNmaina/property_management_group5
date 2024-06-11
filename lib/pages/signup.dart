@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors, unnecessary_new, use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:marries_property/styles/colors.dart';
@@ -8,6 +7,8 @@ void main() {
 }
 
 class SignupApp extends StatelessWidget {
+  const SignupApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

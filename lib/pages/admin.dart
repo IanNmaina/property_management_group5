@@ -33,7 +33,6 @@
 
 import 'package:flutter/material.dart';
 
-
 // Define the AdminPage widget
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -131,7 +130,6 @@ class AdminDashboard extends StatelessWidget {
     );
   }
 
-
   // Helper method to build action buttons
   Widget _buildActionCard(
     BuildContext context, {
@@ -167,6 +165,8 @@ class AdminDashboard extends StatelessWidget {
   }
 }
 
+class AddAgentPage extends StatelessWidget {
+  const AddAgentPage({super.key});
 
 class AddAgentPage extends StatelessWidget {
   const AddAgentPage({super.key});
@@ -197,6 +197,11 @@ class RemoveAgentPage extends StatelessWidget {
   const RemoveAgentPage({super.key});
 
 
+
+// Similarly, create RemoveAgentPage and UpdateAgentPage
+
+class RemoveAgentPage extends StatelessWidget {
+  const RemoveAgentPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,6 +219,10 @@ class RemoveAgentPage extends StatelessWidget {
   }
 }
 
+
+
+class UpdateAgentPage extends StatelessWidget {
+  const UpdateAgentPage({super.key});
 
 class UpdateAgentPage extends StatelessWidget {
   const UpdateAgentPage({super.key});

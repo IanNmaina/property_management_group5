@@ -1,17 +1,25 @@
+<<<<<<< HEAD
+=======
 // ignore_for_file: avoid_print
 
+>>>>>>> ebb331a54e1491c2fe3ed0494befe5685e0b35c0
 import 'package:flutter/material.dart';
 import 'package:marries_property/styles/colors.dart';
 
 class LoginPage extends StatelessWidget {
+<<<<<<< HEAD
+=======
   const LoginPage({super.key});
 
+>>>>>>> ebb331a54e1491c2fe3ed0494befe5685e0b35c0
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: AppColors.background,
+<<<<<<< HEAD
+=======
         body: Column(
           children: [
             const Spacer(),
@@ -188,6 +196,7 @@ class LoginPage extends StatelessWidget {
             )
           ],
         ),
+>>>>>>> ebb331a54e1491c2fe3ed0494befe5685e0b35c0
       ),
     );
   }

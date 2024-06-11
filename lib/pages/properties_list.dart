@@ -70,46 +70,35 @@ class _PropertyListPageState extends State<PropertyListPage> {
       appBar: AppBar(
         title: Image.asset('assets/logo.png',
             height: 50), // Add your logo image here
-         actions: [
-    PopupMenuButton<String>(
-      onSelected: (String result) {
-        // Handle menu selection here
-        print(result);
-      },
-      itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-        PopupMenuItem<String>(
-          value: 'For Sale',
-          child: Text('For sale'),
-        ),
-        PopupMenuItem<String>(
-          value: 'For rent',
-          child: Text('For rent'),
-        ),
-        PopupMenuItem<String>(
-          value: 'about',
-          child: Text('about'),
-        ),
-        PopupMenuItem<String>(
-          value: 'partners',
-          child: Row(children: [
-            Text('partners'),
-            SizedBox(width: 10),
-            IconButton(
-              icon: Icon(Icons.info),
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/partners');
-              },
-            ),
-          ]),
-        ),
-        PopupMenuDivider(),
-        PopupMenuItem<String>(
-          value: 'Sign In',
-          child: Text('Sign In'),
-        ),
-      ],
-    ),
-  ],
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (String result) {
+              // Handle menu selection here
+              print(result);
+            },
+            itemBuilder: (BuildContext context) {
+              return <PopupMenuEntry<String>>[
+                const PopupMenuItem<String>(
+                  value: 'For Sale',
+                  child: Text('For sale'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'For rent',
+                  child: Text('For rent'),
+                ),
+                const PopupMenuItem<String>(
+                  value: 'about',
+                  child: Text('about'),
+                ),
+                const PopupMenuDivider(),
+                const PopupMenuItem<String>(
+                  value: 'Sign In',
+                  child: Text('Sign In'),
+                ),
+              ];
+            },
+          ),
+        ],
       ),
       body: Stack(
         children: [

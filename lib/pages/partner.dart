@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PartnerPage extends StatefulWidget {
+  const PartnerPage({super.key});
+
   @override
   _PartnerPageState createState() => _PartnerPageState();
 }

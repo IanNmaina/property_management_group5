@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PayRentPage extends StatefulWidget {
+  const PayRentPage({super.key});
+
   @override
   _PayRentPageState createState() => _PayRentPageState();
 }

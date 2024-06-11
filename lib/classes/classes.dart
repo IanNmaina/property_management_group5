@@ -4,6 +4,8 @@ class Property {
   int price;
 
   Property(this.title, this.imageUrl, this.price);
+
+ 
 }
 
 class Tenant {

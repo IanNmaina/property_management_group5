@@ -12,6 +12,7 @@ analyzer:
     avoid_print: ignore
     library_private_types_in_public_api: ignore
     prefer_const_constructors: ignore
+    use_key_in_widget_constructors: ignore
 include: package:flutter_lints/flutter.yaml
 
 linter:

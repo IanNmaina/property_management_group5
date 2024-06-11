@@ -5,7 +5,7 @@ class Property {
 
   Property(this.title, this.imageUrl, this.price);
 
-  String? get description => null;
+ 
 }
 
 class Tenant {

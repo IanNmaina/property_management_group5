@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors
+// ignore_for_file: library_private_types_in_public_api, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -11,30 +11,28 @@ class Slide {
   Slide({required this.imageUrl, required this.text});
 }
 
-class PropertyListPage extends StatefulWidget {
-  const PropertyListPage({super.key});
+class HomePage1 extends StatefulWidget {
+  const HomePage1({super.key});
 
+  
   @override
-  _PropertyListPageState createState() => _PropertyListPageState();
+  _HomePage1State createState() => _HomePage1State();
 }
 
-class _PropertyListPageState extends State<PropertyListPage> {
+class _HomePage1State extends State<HomePage1> {
   final ValueNotifier<Color> _currentColorNotifier = ValueNotifier(Colors.grey);
-  // ignore: prefer_final_fields, unused_field
-  bool _isButtonAtTop = true;
   Timer? _timer;
   final PageController _pageController = PageController();
 
-  final List<Slide> slides = [
-    Slide(imageUrl: 'assets/house02.jpeg', text: 'Bungalow'),
-    Slide(imageUrl: 'assets/offer01.jpeg', text: 'Villa'),
-    Slide(imageUrl: 'assets/offer02.jpeg', text: 'Appartment'),
+    final List<Slide> slides = [
+    Slide(imageUrl: 'assets/sunnyHouse.jpg', text: 'Bungalow'),
+    Slide(imageUrl: 'assets/Villa.jpg', text: 'Villa'),
+    Slide(imageUrl: 'assets/offer02.jpeg', text: 'Apartment'),
   ];
-
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 10), (timer) {
+    _timer = Timer.periodic(Duration(seconds: 2), (timer) {
       // Call a function to change the slide
       _changeSlide();
     });
@@ -45,13 +43,13 @@ class _PropertyListPageState extends State<PropertyListPage> {
     if (nextPage < slides.length) {
       _pageController.animateToPage(
         nextPage, // Get current page, add 1
-        duration: const Duration(milliseconds: 500), // Animation duration
+        duration: Duration(milliseconds: 500), // Animation duration
         curve: Curves.ease, // Animation curve
       );
     } else {
       _pageController.animateToPage(
         0, // Return to the first page if it's the last page
-        duration: const Duration(milliseconds: 500), // Animation duration
+        duration: Duration(milliseconds: 500), // Animation duration
         curve: Curves.ease, // Animation curve
       );
     }
@@ -68,8 +66,7 @@ class _PropertyListPageState extends State<PropertyListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset('assets/logo.png',
-            height: 50), // Add your logo image here
+        title: Image.asset('assets/logo.png', height:50), // Add your logo image here
         actions: [
           PopupMenuButton<String>(
             onSelected: (String result) {
@@ -78,20 +75,21 @@ class _PropertyListPageState extends State<PropertyListPage> {
             },
             itemBuilder: (BuildContext context) {
               return <PopupMenuEntry<String>>[
-                const PopupMenuItem<String>(
+                PopupMenuItem<String>(
                   value: 'For Sale',
                   child: Text('For sale'),
                 ),
-                const PopupMenuItem<String>(
+                  PopupMenuItem<String>(
                   value: 'For rent',
                   child: Text('For rent'),
                 ),
-                const PopupMenuItem<String>(
+                
+                PopupMenuItem<String>(
                   value: 'about',
                   child: Text('about'),
                 ),
-                const PopupMenuDivider(),
-                const PopupMenuItem<String>(
+                  PopupMenuDivider(),
+                PopupMenuItem<String>(
                   value: 'Sign In',
                   child: Text('Sign In'),
                 ),
@@ -100,12 +98,12 @@ class _PropertyListPageState extends State<PropertyListPage> {
           ),
         ],
       ),
+      
       body: Stack(
         children: [
           PageView(
             controller: _pageController,
-            children:
-                slides.map((slide) => SlidingObject(slide: slide)).toList(),
+            children: slides.map((slide) => SlidingObject(slide: slide)).toList(),
           ),
           Column(
             children: [
@@ -113,37 +111,37 @@ class _PropertyListPageState extends State<PropertyListPage> {
               // nSearch: (query) {
               //     print('Search query: $query');
               //   },  o
-
-              Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    AnimatedContainer(
-                      duration: const Duration(milliseconds: 500),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          HoveringButton(
-                            text: 'Buy',
-                            color: _currentColorNotifier.value,
-                            onPressed: () {
-                              print('Buy button pressed');
-                            },
-                          ),
-                          const SizedBox(width: 20), // Space between buttons
-                          HoveringButton(
-                            text: 'Rent',
-                            color: _currentColorNotifier.value,
-                            onPressed: () {
-                              print('Rent button pressed');
-                            },
-                          ),
-                        ],
+              
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                AnimatedContainer(
+                  duration: Duration(milliseconds: 500),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      HoveringButton(
+                        text: 'Buy',
+                        color: _currentColorNotifier.value,
+                        onPressed: () {
+                          print('Buy button pressed');
+                        },
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 20), // Space between buttons
+                      HoveringButton(
+                        text: 'Rent',
+                        color: _currentColorNotifier.value,
+                        onPressed: () {
+                          print('Rent button pressed');
+                        },
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
             ],
           ),
         ],
@@ -155,19 +153,15 @@ class _PropertyListPageState extends State<PropertyListPage> {
 class SlidingObject extends StatelessWidget {
   final Slide slide;
 
-  // ignore: prefer_const_constructors_in_immutables
-  SlidingObject({required this.slide});
+  const SlidingObject({required this.slide});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_unnecessary_containers
-    return Container(
-      child: Image.asset(
-        slide.imageUrl,
-        fit: BoxFit.cover,
-        width: double.infinity,
-        height: double.infinity,
-      ),
+    return Image.network(
+      slide.imageUrl,
+      fit: BoxFit.cover,
+      width: double.infinity,
+      height: double.infinity,
     );
   }
 }
@@ -177,8 +171,7 @@ class HoveringButton extends StatefulWidget {
   final VoidCallback onPressed;
   final Color color;
 
-  const HoveringButton(
-      {required this.text, required this.onPressed, required this.color});
+  HoveringButton({required this.text, required this.onPressed, required this.color});
 
   @override
   _HoveringButtonState createState() => _HoveringButtonState();
@@ -203,19 +196,16 @@ class _HoveringButtonState extends State<HoveringButton> {
       child: GestureDetector(
         onTap: widget.onPressed,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: Duration(milliseconds: 200),
           width: 100,
           height: 50, // Adjust height to make it rectangular
           decoration: BoxDecoration(
-            color: _isHovered
-                ? widget.color.withOpacity(0.5)
-                : Colors.transparent, // Transparent background color
+            color: _isHovered ? widget.color.withOpacity(0.5) : Colors.transparent, // Transparent background color
             borderRadius: BorderRadius.circular(30), // Rounded edges
-            border: Border.all(
-                color: widget.color, width: 2), // Border color and width
+            border: Border.all(color: widget.color, width: 2), // Border color and width
             boxShadow: _isHovered
                 ? [
-                    const BoxShadow(
+                    BoxShadow(
                       color: Colors.black26,
                       offset: Offset(0, 4),
                       blurRadius: 8,

@@ -1,7 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
-
 
 class PartnerPage extends StatefulWidget {
   const PartnerPage({super.key});
@@ -9,7 +6,6 @@ class PartnerPage extends StatefulWidget {
   @override
   _PartnerPageState createState() => _PartnerPageState();
 }
-
 
 class _PartnerPageState extends State<PartnerPage> {
   final List<String> partnerNames = [
@@ -21,9 +17,7 @@ class _PartnerPageState extends State<PartnerPage> {
     'Sony',
   ];
 
-
   int _currentPageIndex = 0;
-
 
   void _goToPreviousPage() {
     setState(() {
@@ -33,7 +27,6 @@ class _PartnerPageState extends State<PartnerPage> {
     });
   }
 
-
   void _goToNextPage() {
     setState(() {
       if (_currentPageIndex < partnerNames.length - 1) {
@@ -42,23 +35,22 @@ class _PartnerPageState extends State<PartnerPage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFA387F5),
+      backgroundColor: Colors.green[100],
       appBar: AppBar(
         title: const Text(
           'Our Partners',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.purple[900],
+        backgroundColor: Colors.green[900],
       ),
       body: Column(
         children: [
           Expanded(
             child: Container(
-              color: Colors.purple[700],
+              color: Colors.green[700],
               child: Center(
                 child: Text(
                   partnerNames[_currentPageIndex],
@@ -89,6 +81,3 @@ class _PartnerPageState extends State<PartnerPage> {
     );
   }
 }
-
-
-

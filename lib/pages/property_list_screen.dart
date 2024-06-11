@@ -40,7 +40,7 @@ class _PropertyListScreenState extends State<PropertyListScreen> {
           } else {
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4, // Number of columns
+                crossAxisCount: 4, // Number of columns.
                 childAspectRatio: 2 / 3, // Aspect ratio of the grid items
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 10.0,

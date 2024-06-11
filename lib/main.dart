@@ -12,9 +12,6 @@ import 'pages/manage_agent.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
-import 'pages/agent_profile.dart';
-
-
 
 void main() {
   WidgetsFlutterBinding
@@ -52,6 +49,10 @@ class MyApp extends StatelessWidget {
         '/forgot_password': (context) => const ForgotPasswordPage(),
         '/property_list_screen': (context) => const PropertyListScreen(),
         '/tenant_screen': (context) => const TenantPage(),
+        // Add routes for the admin actions
+        '/add_agent': (context) => const AddAgentPage(),
+        '/remove_agent': (context) => const RemoveAgentPage(),
+        '/update_agent': (context) => const UpdateAgentPage(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {

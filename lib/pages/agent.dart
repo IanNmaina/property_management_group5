@@ -119,7 +119,7 @@ class AgentPage extends StatelessWidget {
                       },
                     ),
                   );
-                }).toList(),
+                }),
               ],
             ),
           ),

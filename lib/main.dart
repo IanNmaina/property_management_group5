@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_import
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_print, library_private_types_in_public_api, prefer_const_constructors_in_immutables, unused_import, duplicate_ignore, no_logic_in_create_state
 
 import 'package:flutter/material.dart';
 import 'package:marries_property/pages/tenants1.dart';
@@ -6,7 +6,6 @@ import 'package:marries_property/pages/admin.dart';
 import 'pages/login.dart';
 import 'pages/homepage.dart';
 import 'pages/agents.dart';
-import 'pages/admin.dart';
 import 'pages/manage_property.dart';
 import 'pages/manage_tenant.dart';
 import 'pages/manage_agent.dart';
@@ -41,7 +40,8 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
         '/agent_dashboard': (context) => const AgentDashboard(),
-        '/admin_dashboard': (context) => const AdminPage(), // Update this route
+        '/admin_dashboard': (context) =>
+            const AdminDashboard(), // Update this route
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
         '/manage_agent': (context) => const ManageAgentPage(),
@@ -54,7 +54,17 @@ class MyApp extends StatelessWidget {
         '/remove_agent': (context) => const RemoveAgentPage(),
         '/update_agent': (context) => const UpdateAgentPage(),
       },
-      debugShowCheckedModeBanner: false, // Remove debug banner
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == '/property_list') {
+      //     final units = settings.arguments as List<Unit>;
+      //     return MaterialPageRoute(
+      //       builder: (context) {
+      //         return PropertyListPage();
+      //       },
+      //     );
+      //   }
+      //   return null;
+      // },
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // Define the AdminPage widget
-class AdminPage extends StatelessWidget {
-  const AdminPage({super.key});
+class AdminDashboard extends StatelessWidget {
+  const AdminDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,12 @@ class AdminPage extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.purple[900],
+        backgroundColor: Colors.green[900],
       ),
       // Make the whole page scrollable
       body: SingleChildScrollView(
         child: Container(
-          color: Colors.purple[100],
+          color: Colors.green[100],
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +29,7 @@ class AdminPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: Colors.purple[900]!, width: 4),
+                    border: Border.all(color: Colors.green[900]!, width: 4),
                   ),
                   padding: const EdgeInsets.all(8.0),
                   child: const CircleAvatar(
@@ -46,7 +46,7 @@ class AdminPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.purple[900],
+                  color: Colors.green[900],
                 ),
               ),
               const SizedBox(height: 20),
@@ -56,7 +56,7 @@ class AdminPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.purple[900],
+                  color: Colors.green[900],
                 ),
               ),
               const SizedBox(height: 10),
@@ -104,7 +104,7 @@ class AdminPage extends StatelessWidget {
     required String route,
   }) {
     return Card(
-      color: Colors.purple[700],
+      color: Colors.green[700],
       elevation: 4,
       child: InkWell(
         onTap: () {
@@ -139,7 +139,7 @@ class AddAgentPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Agent'),
-        backgroundColor: Colors.purple[900],
+        backgroundColor: Colors.green[900],
       ),
       body: Center(
         child: Text(
@@ -161,7 +161,7 @@ class RemoveAgentPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Agent'),
-        backgroundColor: Colors.purple[900],
+        backgroundColor: Colors.green[900],
       ),
       body: Center(
         child: Text(
@@ -181,7 +181,7 @@ class UpdateAgentPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Add Agent'),
-        backgroundColor: Colors.purple[900],
+        backgroundColor: Colors.green[900],
       ),
       body: Center(
         child: Text(

@@ -1,5 +1,6 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
-import 'partner.dart'; // Import the PartnerPage
 
 class TenantPage extends StatelessWidget {
   const TenantPage({Key? key}) : super(key: key);
@@ -68,7 +69,7 @@ class TenantPage extends StatelessWidget {
                     context,
                     icon: Icons.home,
                     label: 'View Property',
-                    route: '/property_list_screen',
+                    route: '/home1',
                   ),
                   _buildActionCard(
                     context,

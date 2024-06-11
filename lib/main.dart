@@ -2,28 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:marries_property/pages/tenants1.dart';
-import 'package:marries_property/pages/view_lease.dart';
-import 'package:marries_property/pages/pay_rent.dart';
+import 'package:marries_property/pages/admin.dart';
 import 'pages/login.dart';
 import 'pages/homepage.dart';
 import 'pages/agents.dart';
-//import 'pages/tenants.dart';
-import 'pages/admin.dart';
 import 'pages/manage_property.dart';
 import 'pages/manage_tenant.dart';
 import 'pages/manage_agent.dart';
-import 'pages/properties_list.dart';
-// import 'classes/unit_category.dart';
 import 'pages/signup.dart';
 import 'pages/forgot_password.dart';
 import 'pages/property_list_screen.dart';
-import 'pages/agent_profile.dart';
-import 'pages/homepagetenants.dart';
 
-//import 'models/models.dart';
-
-//import 'screen/property_list_page.dart';
-//import 'models/models.dart';
 void main() {
   WidgetsFlutterBinding
       .ensureInitialized(); // Ensure Flutter binding is initialized
@@ -33,6 +22,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,29 +39,20 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const LoginPage(),
         '/home': (context) => const HomePage(),
-        '/home1': (context) => const HomePage1(),
         '/agent_dashboard': (context) => const AgentDashboard(),
-        //'/tenant_dashboard': (context) => const TenantDashboard(),
-        '/admin_dashboard': (context) => const AdminDashboard(),
+        '/admin_dashboard': (context) =>
+            const AdminDashboard(), // Update this route
         '/manage_property': (context) => const ManagePropertyPage(),
         '/manage_tenant': (context) => const ManageTenantPage(),
         '/manage_agent': (context) => const ManageAgentPage(),
-        '/property_list': (context) => const PropertyListPage(),
-        // '/property_details': (context) => const PropertyDetailsPage(),
         '/signup': (context) => SignupPage(),
         '/forgot_password': (context) => const ForgotPasswordPage(),
         '/property_list_screen': (context) => const PropertyListScreen(),
         '/tenant_screen': (context) => const TenantPage(),
-        '/agent_profile': (context) => AgentPage(
-              agentName: '',
-              agentPhone: '',
-              agentEmail: '',
-              agentBio: '',
-              agentImageUrl: '',
-            ),
-        '/property_detail': (context) => const PropertyDetailPage(property: {}),
-        '/view_lease': (context) => ViewLeasePage(), // Add this line
-        '/pay_rent': (context) => PayRentPage(), // Add this line
+        // Add routes for the admin actions
+        '/add_agent': (context) => const AddAgentPage(),
+        '/remove_agent': (context) => const RemoveAgentPage(),
+        '/update_agent': (context) => const UpdateAgentPage(),
       },
       // onGenerateRoute: (settings) {
       //   if (settings.name == '/property_list') {
@@ -88,7 +69,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// SplashScreen (remain unchanged)
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

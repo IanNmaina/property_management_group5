@@ -1,4 +1,4 @@
-J// ignore_for_file: avoid_print, unused_local_variable
+// ignore_for_file: avoid_print, unused_local_variable
 
 import 'dart:io';
 
@@ -72,7 +72,7 @@ void addProperty() {
   stdout.write("Enter property price: ");
   int? price = int.parse(stdin.readLineSync()!);
 
-  Property property = Property(title!, imageUrl!, price);
+  Property property = Property(title!, imageUrl!, price,  "description");
   print("Property added successfully");
 }
 

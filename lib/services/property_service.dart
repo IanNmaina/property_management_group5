@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/property.dart';
 
 class PropertyService {
-  static const String baseUrl = 'http://192.168.43.88:3000';
+  static const String baseUrl = 'http://192.168.100.128:3000';
 
   Future<List<Property>> getProperties() async {
     final response = await http.get(Uri.parse('$baseUrl/properties'));

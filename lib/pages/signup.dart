@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// ignore_for_file: prefer_const_constructors, unnecessary_new, use_key_in_widget_constructors, library_private_types_in_public_api
-
->>>>>>> ebb331a54e1491c2fe3ed0494befe5685e0b35c0
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,6 +16,8 @@ class SignupApp extends StatelessWidget {
 }
 
 class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
+
   @override
   _SignupPageState createState() => _SignupPageState();
 }
@@ -127,7 +124,7 @@ class _SignupPageState extends State<SignupPage> {
                   hintText: 'YYYY-MM-DD',
                 ),
                 onTap: () {
-                  FocusScope.of(context).requestFocus(new FocusNode());
+                  FocusScope.of(context).requestFocus(FocusNode());
                   _selectDate(context);
                 },
                 validator: (value) {

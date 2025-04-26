@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
 
 class ViewLeasePage extends StatelessWidget {
@@ -87,7 +89,7 @@ class ViewLeasePage extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Start Date: 2024-06-01'),
@@ -117,7 +119,7 @@ class ViewLeasePage extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text('Type: Apartment'),
@@ -149,7 +151,7 @@ class ViewLeasePage extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
+        children: const [
           Text('Name: John Doe'),
           SizedBox(height: 8),
           Text('Contact: john.doe@example.com'),
